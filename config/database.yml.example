@@ -1,0 +1,23 @@
+development:
+   adapter: postgresql
+   encoding: utf8
+   host: localhost
+   database: onemdm_dev
+   username: postgres
+   password: postgres
+
+test:
+   adapter: postgresql
+   encoding: utf8
+   host: localhost
+   database: onemdm_test
+   username: postgres
+   password: postgres
+
+production:
+   adapter: postgresql
+   encoding: utf8
+   host: localhost
+   database: onemdm_production
+   username: postgres
+   password: postgres
