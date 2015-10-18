@@ -7,7 +7,7 @@ RSpec.describe Device, type: :model do
   it { should validate_presence_of :model }
   it { should validate_uniqueness_of :unique_id }
 
-  describe "after create" do
+  describe "before create" do
     it "generates an access token for the device" do
       expect(device.access_token).not_to be_nil
     end
