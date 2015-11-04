@@ -40,6 +40,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
 end
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
