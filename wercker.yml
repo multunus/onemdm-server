@@ -36,7 +36,8 @@ build:
 deploy:
     steps:
         - heroku-deploy:
-            key-name: HEROKU_DEPLOY_KEY
+            key-name: HEROKU_KEY
+            app-name: HEROKU_APP_NAME
             install-toolbelt: true
             retry: true
             run: rake db:migrate
