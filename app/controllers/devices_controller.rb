@@ -11,7 +11,8 @@ class DevicesController < ApplicationController
                    }, 
             status: :created
     else
-      render json: { error: device.errors.full_messages }, status: :unprocessable_entity
+      render json: { error: device.errors.full_messages }, 
+              status: :unprocessable_entity
     end
   end
 
