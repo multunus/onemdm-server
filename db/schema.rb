@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016122334) do
+ActiveRecord::Schema.define(version: 20151109072450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,8 +54,19 @@ ActiveRecord::Schema.define(version: 20151016122334) do
     t.string   "unique_id"
     t.string   "imei_number"
     t.string   "access_token"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.integer  "heartbeats_count",         default: 0
+    t.datetime "last_heartbeat_recd_time"
   end
 
+  create_table "heartbeats", force: :cascade do |t|
+    t.integer  "device_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "heartbeats", ["device_id"], name: "index_heartbeats_on_device_id", using: :btree
+
+  add_foreign_key "heartbeats", "devices"
 end
