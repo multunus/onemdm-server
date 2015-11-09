@@ -6,6 +6,8 @@ RSpec.describe DevicesController, type: :controller do
     it "creates a device" do
       expect do
         post :create, device: attributes_for(:device), format: :json
+        expect(JSON.parse(response.body)["access_token"]).not_to be_nil
+        expect(JSON.parse(response.body)["next_heartbeat_time"]).not_to be_nil
       end.to change{ Device.count }.by(1)
     end
 
