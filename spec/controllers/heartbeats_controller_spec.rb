@@ -11,8 +11,7 @@ RSpec.describe HeartbeatsController, type: :controller do
     it "Respond with next heartbeat time" do
       post :create, format: :json
       expect(response).to have_http_status(:created)
-      expect(JSON.parse(response.body)["next_heartbeat_time"]).to 
-        match(heartbeat.next_heartbeat_time) 
+      expect(JSON.parse(response.body)["next_heartbeat_time"]).to match(heartbeat.next_heartbeat_time) 
     end
   end
 
