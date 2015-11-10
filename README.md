@@ -19,7 +19,43 @@ OneMDM is an open source Mobile Device Management (MDM) solution. OneMDM can man
 
 ## Quick start
 
-Work-In-Progress
+### Up and Running
+
+OneMDM server uses PostgreSQL as database. Install PostgreSQL if it is not installed already:
+
+``` bash
+sudo apt-get install postgresql postgresql-contrib postgresql-server-dev-9.3
+```
+
+Clone the repo and install the gems:
+
+``` bash
+git clone https://github.com/multunus/onemdm-server.git
+cd onemdm-server
+bundle install
+```
+
+Create `database.yml`. And example file is provided in the `config` directory. Also, update the PostgreSQL username and password in the file:
+
+``` bash
+cp config/database.yml.example config/database.yml
+```
+
+Create and migrate database:
+
+``` bash
+rake db:create
+rake db:migrate
+```
+
+And run the server:
+
+``` bash
+rails s
+```
+
+You can access the admin dashboard now at [http://localhost:3000/admin](http://localhost:3000/admin)
+
 
 ## Features
 
