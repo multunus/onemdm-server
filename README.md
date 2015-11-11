@@ -12,14 +12,17 @@
 * [Bugs and Feature Requests](#bugs-and-feature-requests)
 * [Contributing](#contributing)
 * [Copyright and License](#copyright-and-license)
+* [Free Consulting Session](#free-consulting-session)
 
 ## About OneMDM
 
 OneMDM is an open source Mobile Device Management (MDM) solution. OneMDM can manage widely distributed android devices which are enrolled in the OneMDM server after installing OneMDM client on these devices.
 
-## Quick start
+## Quick Start
 
-### Up and Running
+Eager to get started? This section gives a good introduction to set up OneMDM and run the server on your local machine.
+
+#### Setting up OneMDM Server
 
 OneMDM server uses PostgreSQL as database. Install PostgreSQL if it is not installed already:
 
@@ -48,14 +51,17 @@ rake db:create
 rake db:migrate
 ```
 
-And run the server:
+Run the server:
 
 ``` bash
 rails s
 ```
 
-You can access the admin dashboard now at [http://localhost:3000/admin](http://localhost:3000/admin)
+Now head over to [http://localhost:3000/admin](http://localhost:3000/admin), and you see your OneMDM dashboard.
 
+#### Setting up OneMDM Client
+
+One MDM Client is the android application to run on the client device to communicate with the One MDM Server. Follow these [instructions to set up OneMDM Client](https://github.com/multunus/onemdm-client/blob/master/README.md)
 
 ## Features
 
