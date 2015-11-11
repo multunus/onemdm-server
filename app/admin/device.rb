@@ -17,10 +17,22 @@ ActiveAdmin.register Device do
   index do
     selectable_column
     id_column
+    column "Status" do | device |
+      status = device.status
+      status_tag status.titleize, STATUS_CLASSES[status.to_sym]
+    end    
     column "Model Name",:model
     column :created_at
     column :updated_at
+    column :last_heartbeat_recd_time
     actions
   end
+  filter :model
+  filter :created_at
+  filter :updated_at
+  filter :last_heartbeat_recd_time
 
+  scope :active
+  scope :missing
+  scope :dead
 end

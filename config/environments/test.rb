@@ -40,4 +40,8 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   HEARTBEAT_INTERVAL = 1.hour
+
+  ACTIVE_TIMEFRAME = 12.hours
+  MISSING_TIMEFRAME = 48.hours
+
 end

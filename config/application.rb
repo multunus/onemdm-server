@@ -35,3 +35,4 @@ module OnemdmServer
     config.generators.helper = false
   end
 end
+STATUS_CLASSES ={active: :ok,missing: :warning,dead: :error}
