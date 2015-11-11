@@ -12,7 +12,6 @@
 * [Bugs and Feature Requests](#bugs-and-feature-requests)
 * [Contributing](#contributing)
 * [Copyright and License](#copyright-and-license)
-* [Free Consulting Session](#free-consulting-session)
 
 ## About OneMDM
 
