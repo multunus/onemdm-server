@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113095735) do
+ActiveRecord::Schema.define(version: 20151113140645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(version: 20151113095735) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "apps", force: :cascade do |t|
+    t.string   "name"
+    t.string   "package_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "batch_installations", force: :cascade do |t|
+    t.integer  "app_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "devices", force: :cascade do |t|
     t.string   "model"
     t.string   "unique_id"
@@ -68,6 +81,14 @@ ActiveRecord::Schema.define(version: 20151113095735) do
   end
 
   add_index "heartbeats", ["device_id"], name: "index_heartbeats_on_device_id", using: :btree
+
+  create_table "installations", force: :cascade do |t|
+    t.integer  "device_id"
+    t.integer  "batch_installation_id"
+    t.integer  "status"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   add_foreign_key "heartbeats", "devices"
 end
