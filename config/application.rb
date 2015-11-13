@@ -35,4 +35,5 @@ module OnemdmServer
     config.generators.helper = false
   end
 end
-STATUS_CLASSES ={active: :ok,missing: :warning,dead: :error}
+STATUS_CLASSES = {active: :ok,missing: :warning,dead: :error}
+GCM_KEY = "AIzaSyCZ3lVhV2CbIcZ22f1YI_MvPx3C7sMm_2g"
