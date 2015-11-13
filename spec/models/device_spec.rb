@@ -5,6 +5,7 @@ RSpec.describe Device, type: :model do
 
   it { should validate_presence_of :unique_id }
   it { should validate_presence_of :model }
+  it { should validate_presence_of :gcm_token }
   it { should validate_uniqueness_of :unique_id }
 
   describe "before create" do

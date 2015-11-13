@@ -3,7 +3,7 @@ class Device < ActiveRecord::Base
 
   attr_accessor :status
   
-  validates :unique_id, :model, presence: true
+  validates :unique_id, :model, :gcm_token, presence: true
   validates :unique_id, uniqueness: true
   
   before_create :generate_access_token

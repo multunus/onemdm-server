@@ -19,6 +19,6 @@ class DevicesController < ApplicationController
   private
 
   def device_params
-    params.require(:device).permit(:model, :unique_id, :imei_number)
+    params.require(:device).permit(:model, :unique_id, :imei_number,:gcm_token)
   end
 end

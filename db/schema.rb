@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109072450) do
+ActiveRecord::Schema.define(version: 20151113095735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20151109072450) do
     t.datetime "updated_at",                           null: false
     t.integer  "heartbeats_count",         default: 0
     t.datetime "last_heartbeat_recd_time"
+    t.string   "gcm_token"
   end
 
   create_table "heartbeats", force: :cascade do |t|
