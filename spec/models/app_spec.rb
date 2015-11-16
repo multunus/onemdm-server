@@ -10,7 +10,7 @@ RSpec.describe App, type: :model do
   describe "APK URL" do
     it "Default app" do
       app = create(:app)
-      expect(app.apk_url).to eql(DEFAULT_APP_APK_URL)
+      expect(app.apk_url).to eql(DEFAULT_APP_URL)
     end
     it "Non Default app" do
       app = App.create(name: "Non MDM", package_name: "com.nonmdm")
