@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
   def render_unauthorized
     render json: "Bad token", status: :unauthorised
   end
+
+  def set_timezone_for_admin
+    Time.zone = "Mumbai"
+  end
 end

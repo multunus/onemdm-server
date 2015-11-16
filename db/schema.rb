@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 20151113140645) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "batch_installations", ["app_id"], name: "index_batch_installations_on_app_id", using: :btree
+
   create_table "devices", force: :cascade do |t|
     t.string   "model"
     t.string   "unique_id"
@@ -85,10 +87,16 @@ ActiveRecord::Schema.define(version: 20151113140645) do
   create_table "installations", force: :cascade do |t|
     t.integer  "device_id"
     t.integer  "batch_installation_id"
-    t.integer  "status"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.integer  "status",                default: 0, null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
+  add_index "installations", ["batch_installation_id"], name: "index_installations_on_batch_installation_id", using: :btree
+  add_index "installations", ["device_id"], name: "index_installations_on_device_id", using: :btree
+
+  add_foreign_key "batch_installations", "apps"
   add_foreign_key "heartbeats", "devices"
+  add_foreign_key "installations", "batch_installations"
+  add_foreign_key "installations", "devices"
 end

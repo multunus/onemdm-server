@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :app do
-    name "My Ultimate Application"
-    package_name "my.ultimate.application"
+    name "One MDM"
+    package_name "com.multunus.onemdm"
   end
 
 end

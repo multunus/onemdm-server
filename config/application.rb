@@ -37,3 +37,5 @@ module OnemdmServer
 end
 STATUS_CLASSES = {active: :ok,missing: :warning,dead: :error}
 GCM_KEY = "AIzaSyCZ3lVhV2CbIcZ22f1YI_MvPx3C7sMm_2g"
+DEFAULT_APP_PACKAGE_NAME = "com.multunus.onemdm"
+DEFAULT_APP_URL = "https://s3.amazonaws.com/onemdm/onemdm.apk"

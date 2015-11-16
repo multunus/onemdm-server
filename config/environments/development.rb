@@ -42,5 +42,5 @@ Rails.application.configure do
 
   ACTIVE_TIMEFRAME = 1.hours
   MISSING_TIMEFRAME = 2.hours
-
+  #DEFAULT_APP_URL = "http://192.168.2.92:3000/onemdm.apk"
 end

@@ -2,18 +2,21 @@ ActiveAdmin.register Device do
 
   actions :all, except: [:edit,:new]
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+  app_data = lambda do
+    apps = App.order('name').reload.pluck(:name,:id)
+    {"App Name" => apps}
+  end
+
+  batch_action :push, confirm: "Select apps to push",form: app_data do |ids,inputs|
+    app = App.find(inputs["App Name"])
+    batch = BatchInstallation.create(:app => app)
+    ids.each do | id |
+      install = Installation.new(device: Device.find(id),batch_installation: batch)
+      install.pushed!
+    end
+    redirect_to admin_dashboard_path, notice: "Successfully pushed app to device(s)"
+  end
+  
   index do
     selectable_column
     id_column

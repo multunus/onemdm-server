@@ -1,9 +1,9 @@
 class CreateInstallations < ActiveRecord::Migration
   def change
     create_table :installations do |t|
-      t.integer :device_id
-      t.integer :batch_installation_id
-      t.integer :status
+      t.belongs_to :device, foreign_key: true, index: true
+      t.belongs_to :batch_installation, foreign_key: true, index: true
+      t.integer :status, default: 0, null: false
 
       t.timestamps null: false
     end
