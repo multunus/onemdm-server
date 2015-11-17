@@ -25,7 +25,7 @@ ActiveAdmin.register Device do
       status_tag status.titleize, STATUS_CLASSES[status.to_sym]
     end    
     column "Model Name",:model
-    column :imei_number
+    column "IMEI Number",:imei_number
     column :created_at
     column :updated_at
     column :last_heartbeat_recd_time
