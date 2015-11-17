@@ -17,6 +17,8 @@
 
 OneMDM is an open source Mobile Device Management (MDM) solution. OneMDM can manage widely distributed android devices which are enrolled in the OneMDM server after installing OneMDM client on these devices.
 
+![devices] (https://cloud.githubusercontent.com/assets/5321440/11210193/47f83948-8d4c-11e5-8b1e-4831b0151bb9.png)
+
 ## Quick Start
 
 Eager to get started? This section gives a good introduction to set up OneMDM and run the server on your local machine.
