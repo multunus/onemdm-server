@@ -1,0 +1,27 @@
+require 'rails_helper'
+
+RSpec.describe InstallationsController, type: :controller do
+  let(:installation) {FactoryGirl.create(:installation)}
+  let(:device){installation.device}
+  before(:each)do 
+    request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Token.encode_credentials(device.access_token)
+  end
+
+  describe "POST #downloaded" do
+    
+    it "upate installation with download status" do
+      post :downloaded, :id => installation.id  , format: :json
+      expect(response).to have_http_status(:ok)
+      expect(Installation.last.downloaded?).to be true
+    end
+  end
+
+  describe "POST #installed" do
+    
+    it "update installation with installed status" do
+      post :installed, :id => installation.id  , format: :json
+      expect(response).to have_http_status(:ok)
+      expect(Installation.last.installed?).to be true
+    end
+  end
+end

@@ -1,5 +1,7 @@
 class App < ActiveRecord::Base
 
+  default_scope {order("name")}
+  
   has_many :batch_installations, dependent: :destroy
   
   validates :name, :package_name, presence: true
