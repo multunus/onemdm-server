@@ -1,6 +1,4 @@
 class Device < ActiveRecord::Base
-  default_scope {order ('id desc')}
-
   enum status: [:active,:missing,:dead]
 
   attr_accessor :status

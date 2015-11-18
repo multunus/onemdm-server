@@ -1,6 +1,6 @@
 class App < ActiveRecord::Base
 
-  default_scope {order("name")}
+  default_scope -> {order("name")}
   
   has_many :batch_installations, dependent: :destroy
   
