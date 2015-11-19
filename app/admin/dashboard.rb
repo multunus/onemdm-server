@@ -3,8 +3,19 @@ ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
-
-  panel "Recent Pushes" do
+    panel "Device Status"  do
+      columns  do
+        STATUS_CLASSES.keys.each do |status|
+          column span:1 do
+            span status.to_s.titleize
+            span link_to(Device.send(status).count,
+              admin_devices_path(scope: status.to_s))
+          end
+        end
+      end
+    end
+    
+    panel "Recent Pushes" do
       table_for BatchInstallation.order('id desc').limit(10) do
         column "Pushed on" do |batch|
           batch.created_at

@@ -39,4 +39,27 @@ ActiveAdmin.register Device do
   scope :active
   scope :missing
   scope :dead
+
+  show do
+    attributes_table do
+      row :model
+      row :imei_address
+      row :unique_id
+      row :os_version
+      row :client_version
+      row :last_heartbeat_recd_time
+      row :heartbeats_count
+      row :created_at
+      row :updated_at
+      panel "APP INSTALL DETAILS" do
+        table_for device.installations.order('updated_at desc') do
+          column "App Name" do |installation|
+            link_to installation.app.name, admin_app_path(installation.app.id)
+          end
+          column(:status){ |installation| installation.status.titleize }
+          column "Date", :updated_at
+        end
+      end
+    end
+  end
 end
