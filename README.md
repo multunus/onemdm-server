@@ -1,4 +1,4 @@
-# OneMDM Server
+# OneMDM Server 
 
 [![Code Climate](https://codeclimate.com/github/multunus/onemdm-server/badges/gpa.svg)](https://codeclimate.com/github/multunus/onemdm-server)
 
