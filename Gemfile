@@ -26,6 +26,7 @@ gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'rollbar', '~> 2.5.0'
 gem 'gcm'
+gem 'newrelic_rpm'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
