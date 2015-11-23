@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   post 'heartbeats', to: 'heartbeats#create', :defaults => { :format => :json }
-  post '/installations/downloaded', :defaults => { :format => :json }
   post '/installations/installed', :defaults => { :format => :json } 
   get '/apps',to: 'apps#index', :defaults => { :format => :json }
   ActiveAdmin.routes(self)
