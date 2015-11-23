@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'heartbeats', to: 'heartbeats#create', :defaults => { :format => :json }
   post '/installations/downloaded', :defaults => { :format => :json }
   post '/installations/installed', :defaults => { :format => :json } 
-  
+  get '/apps',to: 'apps#index', :defaults => { :format => :json }
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
