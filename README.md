@@ -7,6 +7,7 @@
 ## Table of Contents
 
 * [About OneMDM](#about-one-mdm)
+* [Live Demo](#live-demo)
 * [Quick Start](#quick-start)
 * [Features](#features)
 * [Bugs and Feature Requests](#bugs-and-feature-requests)
@@ -18,6 +19,16 @@
 OneMDM is an open source Mobile Device Management (MDM) solution. OneMDM can manage widely distributed android devices which are enrolled in the OneMDM server after installing OneMDM client on these devices.
 
 ![devices](https://cloud.githubusercontent.com/assets/5321440/11210309/55bbbff4-8d4d-11e5-9430-03757b0976a3.png)
+
+## Live Demo
+
+You can see the live demo of the server here: [One MDM Server](https://demo-onemdm.herokuapp.com). You can sign in using default username `user@onemdm.com` and password `demo1mdm`.
+
+Download the apk and install it your device. Open the OneMDM app for registering your device. Once registered, you can view your device (Model number) in the live demo admin console.
+
+You can also download the apk directly from your mobile by accessing this URL : http://bit.ly/demo-mdm
+
+_Note : Your device will be deleted from the live demo server after 24 hours._
 
 ## Quick Start
 
