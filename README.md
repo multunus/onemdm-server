@@ -1,9 +1,5 @@
 # OneMDM Server 
 
-[![Code Climate](https://codeclimate.com/github/multunus/onemdm-server/badges/gpa.svg)](https://codeclimate.com/github/multunus/onemdm-server)
-
-[![wercker status](https://app.wercker.com/status/85bee6f48800554f27ff573ebc85a57c/m/master "wercker status")](https://app.wercker.com/project/bykey/85bee6f48800554f27ff573ebc85a57c)
-
 ## Table of Contents
 
 * [About OneMDM](#about-one-mdm)
@@ -22,13 +18,16 @@ OneMDM is an open source Mobile Device Management (MDM) solution. OneMDM can man
 
 ## Live Demo
 
-You can see the live demo of the server here: [One MDM Server](https://demo-onemdm.herokuapp.com). You can sign in using default username `user@onemdm.com` and password `demo1mdm`.
+You can check the live demo of the server here: [One MDM Server](https://demo-onemdm.herokuapp.com). You can sign in using  the email `user@onemdm.com` and the password `demo1mdm`.
 
-Download the apk and install it your device. Open the OneMDM app for registering your device. Once registered, you can view your device (Model number) in the live demo admin console.
+[Download the apk](http://bit.ly/demo-mdm) and install it in your device. Open the OneMDM app for registering your device. Once registered, you can view your device (Model number) in the live demo admin console.
 
-You can also download the apk directly from your mobile by accessing this URL : http://bit.ly/demo-mdm
+__Note__: Your device will be deleted from the live demo server after ___24 hours___.
 
-_Note : Your device will be deleted from the live demo server after 24 hours._
+[![Code Climate](https://codeclimate.com/github/multunus/onemdm-server/badges/gpa.svg)](https://codeclimate.com/github/multunus/onemdm-server)
+
+[![wercker status](https://app.wercker.com/status/85bee6f48800554f27ff573ebc85a57c/m/master "wercker status")](https://app.wercker.com/project/bykey/85bee6f48800554f27ff573ebc85a57c)
+
 
 ## Quick Start
 
@@ -66,7 +65,7 @@ rake db:migrate
 Run the server:
 
 ``` bash
-rails s
+rails s -b 0.0.0.0
 ```
 
 Now head over to [http://localhost:3000/admin](http://localhost:3000/admin), and you see your OneMDM dashboard.
