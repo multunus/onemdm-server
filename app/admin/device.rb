@@ -26,6 +26,7 @@ ActiveAdmin.register Device do
     end    
     column "Model Name",:model
     column "IMEI Number",:imei_number
+    column :os_version
     column :created_at
     column :updated_at
     column :last_heartbeat_recd_time
@@ -35,7 +36,9 @@ ActiveAdmin.register Device do
   filter :created_at
   filter :updated_at
   filter :last_heartbeat_recd_time
-
+  filter :os_version
+  filter :client_version
+  
   scope :active
   scope :missing
   scope :dead
