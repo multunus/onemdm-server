@@ -27,9 +27,10 @@ ActiveAdmin.register Device do
     column "Model Name",:model
     column "IMEI Number",:imei_number
     column :os_version
-    column :created_at
-    column :updated_at
+    column :client_version
+    column :heartbeats_count
     column :last_heartbeat_recd_time
+    column :created_at
     actions
   end
   filter :model
