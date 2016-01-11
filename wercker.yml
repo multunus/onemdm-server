@@ -21,6 +21,9 @@ build:
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
     steps:
+        - script:
+            name: bundle - nokogiri using sys lib
+            code: bundle config build.nokogiri --use-system-libraries
         - bundle-install
         - rails-database-yml
         - script:
