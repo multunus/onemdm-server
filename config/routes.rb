@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post 'app_usages/create', to: 'app_usages#create', :defaults => { :format => :json }
+
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   post 'heartbeats', to: 'heartbeats#create', :defaults => { :format => :json }
