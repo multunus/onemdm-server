@@ -1,16 +1,20 @@
 ActiveAdmin.register_page "App Usage" do
 
   menu priority: 2, label: "App Usage"
-  app_usages = AppUsage.select(:package_name,:device_id,:used_on).
+  app_usage_data = []
+  begin
+    app_usages = AppUsage.select(:package_name,:device_id,:used_on).
           order("used_on desc").
           group("device_id","package_name","used_on").
           sum("usage_duration_in_seconds")
-  app_usage_data = []
-  app_usages.each do |key,value|
-    app_usage_data << {device_id: key[0],
+    app_usages.each do |key,value|
+      app_usage_data << {device_id: key[0],
                        package_name: key[1],
                        used_on: key[2],
                        usage: value} 
+    end
+  rescue
+    
   end
   content title: "App Usage" do
     
