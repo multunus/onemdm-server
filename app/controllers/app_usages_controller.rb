@@ -3,12 +3,11 @@ class AppUsagesController < ApplicationController
   respond_to :json
   
   def create
-    app_usage = AppUsage.new(app_usage_params)
-    if app_usage.save
-      render json: {}, 
-            status: :created
-    else
-      logger.warn "Error while saving App Usage #{app_usage.errors.full_messages}"
+    begin
+      @device.app_usages << AppUsage.create!(app_usage_params)
+      render json: {}, status: :created
+    rescue Exception => e  
+      logger.warn "Error while saving App Usage #{e.message}"
       render json: {}, 
               status: :unprocessable_entity
     end
@@ -16,10 +15,10 @@ class AppUsagesController < ApplicationController
   private
 
   def app_usage_params
-    params.require(:app_usage).
-      permit(:package_name,
-            :usage_duration_in_seconds,
-            :used_on)
-              
+    params.permit(app_usage: 
+                  [:package_name,
+                    :usage_duration_in_seconds,
+                    :used_on]).require(:app_usage)
+
   end
 end

@@ -53,9 +53,12 @@ ActiveRecord::Schema.define(version: 20160204094618) do
     t.string   "package_name",              null: false
     t.integer  "usage_duration_in_seconds", null: false
     t.date     "used_on",                   null: false
+    t.integer  "device_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  add_index "app_usages", ["device_id"], name: "index_app_usages_on_device_id", using: :btree
 
   create_table "apps", force: :cascade do |t|
     t.string   "name"
@@ -105,6 +108,7 @@ ActiveRecord::Schema.define(version: 20160204094618) do
   add_index "installations", ["batch_installation_id"], name: "index_installations_on_batch_installation_id", using: :btree
   add_index "installations", ["device_id"], name: "index_installations_on_device_id", using: :btree
 
+  add_foreign_key "app_usages", "devices"
   add_foreign_key "batch_installations", "apps"
   add_foreign_key "heartbeats", "devices"
   add_foreign_key "installations", "batch_installations"
