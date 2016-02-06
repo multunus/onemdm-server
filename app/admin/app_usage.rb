@@ -1,12 +1,10 @@
 ActiveAdmin.register_page "App Usage" do
 
   menu priority: 2, label: "App Usage"
+  content title: "App Usage" do
   app_usage_data = []
   begin
-    app_usages = AppUsage.select(:package_name,:device_id,:used_on).
-          order("used_on desc").
-          group("device_id","package_name","used_on").
-          sum("usage_duration_in_seconds")
+    app_usages = AppUsage.app_usages_per_device_app_day
     app_usages.each do |key,value|
       app_usage_data << {device_id: key[0],
                        package_name: key[1],
@@ -16,7 +14,6 @@ ActiveAdmin.register_page "App Usage" do
   rescue
     
   end
-  content title: "App Usage" do
     
     panel "Usage Report" do
       table_for app_usage_data do
