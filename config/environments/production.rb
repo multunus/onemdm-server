@@ -76,8 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  HEARTBEAT_INTERVAL = 1.hour
+  HEARTBEAT_INTERVAL = 12.hour
 
-  ACTIVE_TIMEFRAME = 12.hours
-  MISSING_TIMEFRAME = 48.hours
+  ACTIVE_TIMEFRAME = 48.hours
+  MISSING_TIMEFRAME = 120.hours
 end
