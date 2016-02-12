@@ -39,6 +39,7 @@ ActiveAdmin.register Device do
   filter :last_heartbeat_recd_time
   filter :os_version
   filter :client_version
+  filter :imei_address
   
   scope :active
   scope :missing
