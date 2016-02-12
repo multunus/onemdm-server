@@ -39,7 +39,7 @@ ActiveAdmin.register Device do
   filter :last_heartbeat_recd_time
   filter :os_version
   filter :client_version
-  filter :imei_address
+  filter :imei_number
   
   scope :active
   scope :missing
@@ -48,7 +48,7 @@ ActiveAdmin.register Device do
   show do
     attributes_table do
       row :model
-      row :imei_address
+      row :imei_number
       row :unique_id
       row :os_version
       row :client_version
