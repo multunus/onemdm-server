@@ -22,7 +22,7 @@ ActiveAdmin.register_page "App Usage" do
         end
         column "Device" do |app_usage|
           device_id = app_usage[:device_id]
-          link_to device_id,admin_devices_path(device_id)
+          link_to device_id,admin_device_path(device_id)
         end
         column "Package Name" do |app_usage|
           app_usage[:package_name]
