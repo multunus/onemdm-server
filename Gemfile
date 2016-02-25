@@ -28,6 +28,8 @@ gem 'rollbar', '~> 2.5.0'
 gem 'gcm'
 gem 'newrelic_rpm'
 
+gem 'puma'
+gem "rack-timeout"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
