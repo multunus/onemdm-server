@@ -4,6 +4,7 @@ class AppUsage < ActiveRecord::Base
 
   scope :app_usages_per_device_app_day, lambda {
           AppUsage.select(:package_name,:device_id,:used_on).
+          where("device_id IS NOT NULL").
           order("used_on desc").
           order("device_id").
           order("package_name").
