@@ -35,7 +35,7 @@ build:
     after-steps:
         - wantedly/pretty-slack-notify:
             webhook_url: $SLACK_WEBHOOK_URL
-            channel: one-mdm
+            channel: sb-one-mdm
 deploy:
     steps:
         - heroku-deploy:
@@ -46,4 +46,4 @@ deploy:
     after-steps:
         - wantedly/pretty-slack-notify:
             webhook_url: $SLACK_WEBHOOK_URL
-            channel: one-mdm
+            channel: sb-one-mdm
