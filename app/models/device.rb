@@ -16,7 +16,7 @@ class Device < ActiveRecord::Base
   scope :active, -> {where("last_heartbeat_recd_time > '#{Time.now.utc - ACTIVE_TIMEFRAME}'")}
   scope :missing, -> {where("last_heartbeat_recd_time < '#{Time.now.utc - ACTIVE_TIMEFRAME}'AND last_heartbeat_recd_time > '#{Time.now.utc - MISSING_TIMEFRAME}'")}
   scope :dead, -> {where("last_heartbeat_recd_time < '#{Time.now.utc - MISSING_TIMEFRAME}'")}
-  
+
   def generate_access_token
     self.access_token = SecureRandom.uuid
   end
@@ -39,5 +39,16 @@ class Device < ActiveRecord::Base
     else
       self.status = Device.statuses.keys[2]
     end
+  end
+
+  def app_usage_summary
+    app_usage_data = []
+    self.app_usages.app_usages_per_device_app_day.each do |key,value|
+      app_usage_data << {device_id: key[0],
+                       package_name: key[1],
+                       used_on: key[2],
+                       usage: value} 
+    end
+    app_usage_data
   end
 end

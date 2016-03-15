@@ -56,6 +56,27 @@ ActiveAdmin.register Device do
       row :heartbeats_count
       row :created_at
       row :updated_at
+      total_usage = 0
+
+      panel "App Usage Details" do
+        table_for device.app_usage_summary do
+          column "Used On" do |app_usage|
+            app_usage[:used_on]
+          end
+          column "App Name" do |app_usage|
+            app_usage[:package_name]
+          end
+          column "Total Usage" do |app_usage|
+            total_usage += app_usage[:usage]
+            distance_of_time_in_words app_usage[:usage]
+          end
+        end
+      end
+      
+      row "Total Usage" do 
+        distance_of_time_in_words total_usage
+      end
+
       panel "APP INSTALL DETAILS" do
         table_for device.installations.order('updated_at desc') do
           column "App Name" do |installation|

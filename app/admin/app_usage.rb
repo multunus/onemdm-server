@@ -28,8 +28,6 @@ ActiveAdmin.register_page "App Usage" do
           app_usage[:package_name]
         end
         column "Total Usage" do |app_usage|
-          #usage_in_minutes = app_usage[:usage]/60
-          #(usage_in_minutes > 0) ? usage_in_minutes :"Less than a minute"
           distance_of_time_in_words (app_usage[:usage])
         end
       end
