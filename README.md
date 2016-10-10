@@ -62,6 +62,15 @@ rake db:create
 rake db:migrate
 ```
 
+Add admin user:
+
+``` bash
+rake db:seed
+```
+This will add the user with the username _admin@example.com_ and the password  _password_.
+
+If you prefer to change these, change the same in the file _db/seeds.rb_ before running `rake db:seed` command.
+
 Run the server:
 
 ``` bash
