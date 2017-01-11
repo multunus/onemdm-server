@@ -65,8 +65,8 @@ GEM
       thor (~> 0.19)
     builder (3.2.2)
     byebug (6.0.2)
-    codeclimate-test-reporter (0.4.8)
-      simplecov (>= 0.7.1, < 1.0.0)
+    codeclimate-test-reporter (1.0.3)
+      simplecov
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -250,7 +250,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   byebug
-  codeclimate-test-reporter
+  codeclimate-test-reporter (~> 1.0.0)
   coffee-rails (~> 4.1.0)
   devise
   factory_girl_rails
@@ -265,6 +265,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shoulda-matchers
+  simplecov
   spring
   therubyracer
   turbolinks
@@ -272,4 +273,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.13.7

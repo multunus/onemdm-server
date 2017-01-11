@@ -43,7 +43,11 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
 end
-gem "codeclimate-test-reporter", group: :test, require: nil
+
+group :test do
+  gem "simplecov"
+  gem "codeclimate-test-reporter", "~> 1.0.0"
+end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
