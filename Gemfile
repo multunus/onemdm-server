@@ -24,7 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pg'
 gem 'devise'
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git'
-gem 'rollbar', '~> 2.5.0'
+gem 'rollbar', '~> 2.14.0'
 gem 'gcm'
 gem 'newrelic_rpm'
 
