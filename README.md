@@ -1,3 +1,5 @@
+# This repo is no longer maintained
+
 # OneMDM Server 
 
 ## Table of Contents
